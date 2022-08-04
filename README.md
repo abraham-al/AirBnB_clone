@@ -154,7 +154,7 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-* Abraham Alemseged - [Github](https://github.com/abraham-al) / [Twitter](https://twitter.com/abirsh_al)  / [Linkedin] (https://www.linkedin.com/in/abraham-alemseged) / [Telegram] (https://t.me/abraham_al)
+* Abraham Alemseged - [Github](https://github.com/abraham-al) / [Twitter](https://twitter.com/abirsh_al)  / [Linkedin](https://www.linkedin.com/in/abraham-alemseged) / [Telegram](https://t.me/abraham_al)
 * Femi Olorunfemi - [Github](https://github.com/djphemi) 
 
 ## License
