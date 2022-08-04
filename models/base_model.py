@@ -2,14 +2,14 @@
 """
 Contains class BaseModel
 """
-from datetime import date, datetime
-from errno import ESTALE
+from datetime import  datetime
 from time import strftime
 import models
 from os import getenv
 import uuid
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
+
 class BaseModel:
     """The BaseModel class from which future classes will be derived"""
     
@@ -40,6 +40,8 @@ class BaseModel:
     def save(self):
         """Updates the attribute 'updated_at' with the current datetime"""
         self.updated_at = datetime.utcnow()
+        models.storage.new(self)
+        models.storage.save()
         
     def to_dict(self):
         """returns a dictionary containing all keys/values of the instance"""
