@@ -1,14 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 """ holds class User"""
-import models
-from models.base_model import BaseModel, Base
-from os import getenv
+from models.base_model import BaseModel
 
 
-
-class User(BaseModel, Base):
+class User(BaseModel):
     """Representation of a user """
-    
     email = ""
     password = ""
     first_name = ""
