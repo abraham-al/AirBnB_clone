@@ -28,6 +28,27 @@ class FileStorage:
             return new_dict
         else:
             return self.__objects
+
+    def get(self, cls, id):
+        '''
+            Retrieves one object if exists
+        '''
+        cls_dict = self.all(cls)
+        for k, v in cls_dict.items():
+            obj = cls + '.' + id
+            if k == obj:
+                return(v)
+        return(None)
+
+    def count(self, cls=None):
+        '''
+           counts the num of objects in particular cls
+        '''
+        count = 0
+        cls_dict = self.all(cls)
+        count = len(cls_dict)
+        return(count)
+
     def new(self, obj):
         '''
             Set in __objects the obj with key <obj class name>.id
@@ -62,3 +83,39 @@ class FileStorage:
                 FileStorage.__objects[key] = class_name(**val)
         except FileNotFoundError:
             pass
+
+    def delete(self, obj=None):
+        '''
+        Deletes an obj
+        '''
+        if obj is not None:
+            key = str(obj.__class__.__name__) + "." + str(obj.id)
+            FileStorage.__objects.pop(key, None)
+            self.save()
+
+    def close(self):
+        '''
+        Deserialize JSON file to objects
+        '''
+        self.reload()
+
+    def get(self, cls, id):
+        """
+        Retrieve one object
+        @cls: class name
+        @id: string representing the object ID
+        Return: Object based on the class name and its ID, or None if not found
+        """
+        obj = self.__session.query(cls).get(id)
+        if obj is None:
+            return None
+        return obj
+
+    def count(self, cls=None):
+        """
+        Count the number of objects in storage:
+        @cls: class name
+        Return:
+        """
+        objs = self.all(cls)
+        return (len(objs))
