@@ -1,16 +1,12 @@
-footer{
-    position: fixed;
-    bottom: 0;
-    background-color: white;
+footer {
+    background-color: #FFFFFF;
+    border-top: 1px solid #CCCCCC;
     height: 60px;
     width: 100%;
-    border-top: 1px solid #CCCCCC;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-footer p{
+footer p {
     text-align: center;
-    margin: 20px;
+    margin: auto;
 }

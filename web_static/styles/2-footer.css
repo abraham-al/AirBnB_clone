@@ -1,12 +1,13 @@
-footer{
-    position: fixed;
-    bottom: 0;
+footer {
     background-color: #00FF00;
     height: 60px;
     width: 100%;
+    position: absolute;
+    top: 92%;
+    display: flex;
 }
 
-footer p{
+footer p {
     text-align: center;
-    margin: 20px;
+    margin: auto;
 }
